@@ -1,22 +1,31 @@
-const exec = require('child_process').execSync;
+const execSync = require('child_process').execSync;
 const assert = require('chai').assert;
 const sinon = require('sinon');
 const process = require('process');
 const console = require('console');
 const dropFile = require('../src/file').dropFile;
+const daft = require('../src/daft');
+
+var exec = function(command, opts, cwd){
+  assert(execSync(command, opts, cwd), "Could not execute: "+command);
+};
 
 describe('daft', function() {
   before(function(){
-    exec("cp -r test/testrepo test/repo");
-    exec("git init", [], "test/repo");
+    dropFile("target");
+    exec("mkdir -p target/repo");
+    exec("git init", [], "target/repo");
+    exec("cp -r testasset/README target/repo");
+    exec("cp -r testasset/build.daft target/repo");
   });
   beforeEach(function(){
     // The beforeEach() callback gets run before each test in the suite.
   });
-  it('does x when y', function(){
-    assert.equal(-1, [1,2,3].indexOf(5));
+  it('duplicates file', function(){
+    process.chdir('target/repo');
+    daft();
   });
   after(function() {
-    dropFile("test/repo");
+    // do nothing
   });
 });

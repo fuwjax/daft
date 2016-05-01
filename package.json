@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "./build"
+    "test": "./build.sh"
   },
   "repository": {
     "type": "git",
@@ -31,5 +31,8 @@
   },
   "jshintConfig": {
     "esversion": 6
+  },
+  "dependencies": {
+    "js-yaml": "^3.6.0"
   }
 }
