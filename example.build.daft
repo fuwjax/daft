@@ -1,0 +1,55 @@
+# alias is a simple alias of the form
+#alias name docker-image-id
+# aliases will always need to come first in a build.daft
+alias javac docker.fuwjax.com/daft-javac
+alias ivy docker.fuwjax.com/daft-ivy
+
+# a label sits on a line by itself, I think.
+# it's just a placeholder in the script in case I come down
+# off my high horse on short circuit builds
+compile:
+
+# aliases or docker images are "run" directly as
+#name config-root command-line-options
+javac java.main -o3
+javac java.test
+
+test:
+#inline json maybe?
+ivy {"lib": "target/test-deps"} org.junit:junit:4.12
+#what about things like junit, should it be encouraged that they're dockers too?
+docker.fuwjax.com/daft-java java.junit org.junit.runner.JUnitCore org.fuwjax.sample.TestSuite
+
+package:
+# shell commands can be issued from within the build container
+# shell commands are always prefaced with a '$'
+$ cp -r src/main/META-INF target/classes
+
+# there needs to be some sort of variable arguments for the script
+# haven't quite figured out how they get in here, probably env to start
+docker.fuwjax.com/daft-jar classes.main sample-$VERSION.jar
+docker.fuwjax.com/daft-jar classes.test sample-test-$VERSION.jar
+
+# the script ends with a yaml block preceded by three dashes
+# it probably makes sense to have some sort of internal reference variables
+# maybe with a percent? so classes.main.source could be set to %java.main.target
+---
+java:
+  main:
+    source: src/main/java
+    target: target/classes
+    libs: target/deps
+  test:
+    source: src/test/java
+    target: target/test-classes
+    libs: target/test-deps
+  junit:
+    source:
+      - target/classes
+      - target/test-classes
+      - target/test-deps
+classes:
+  main:
+    source: target/classes
+  test:
+    source: target/test-classes

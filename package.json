@@ -1,0 +1,35 @@
+{
+  "name": "daft",
+  "version": "1.0.0",
+  "description": "Dead simple Docker scripting",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "./build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fuwjax/daft.git"
+  },
+  "keywords": [
+    "npm",
+    "docker"
+  ],
+  "author": "Mike Doberenz <fuwjax@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fuwjax/daft/issues"
+  },
+  "homepage": "https://github.com/fuwjax/daft#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "jshint": "^2.9.2",
+    "mocha": "^2.4.5",
+    "sinon": "^1.17.3"
+  },
+  "jshintConfig": {
+    "esversion": 6
+  }
+}
