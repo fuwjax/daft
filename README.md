@@ -71,20 +71,20 @@ Most steps will be a Docker command instead of a shell command. A docker command
 followed by a json path identifier into the yaml data object, followed by commandline arguments that should be passed
 to the Docker command container. For instance
 
-    daft-maven childProject.root -X compile
+    daft/mvn childProject.root -X compile
 
 Asks the daft script interpreter to run the Docker image called "daft-maven" against the path mappings identified in the yaml under the key "childProject.root" and to pass "-X compile" to the docker container on startup. Just for completeness, here's the full script with the data section
 
-    daft-maven childProject.root -X compile
+    daft/mvn childProject.root -X compile
     ---
     childProject:
       root:
-        "/project": children/first
+        "/project": children/maven-project
 
-what this means is that the "daft-maven" image (which doesn't exist, by the way), has been configured to run against
+what this means is that the "daft/mvn" image (which doesn't exist, by the way), has been configured to run against
 a maven project in "/project". The actual execution within the interpreter for the previous example might look like.
 
-    docker run daft-maven -v /project:children/first -X compile
+    docker run daft/mvn -v /project:children/maven-project -X compile
 
 Phases within the script are marked by labels
 
@@ -110,7 +110,7 @@ Inline json is acceptable if you don't want to use the data lookup. That means i
 
     metalsmith {"/project": "children/first"}
 
-Of if you just want to use all the defaults (rarely possible)
+Of if you just want to use all the defaults
 
     metalsmith {}
 

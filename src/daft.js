@@ -11,14 +11,14 @@ var makeOpts = function(paths){
 
 var daft = function(){
   var src = fs.readFileSync('build.daft', 'utf8');
-  var pair = src.split("---", 2);
+  var pair = src.split("---", 3);
   var opts = pair.length < 2 ? {} : yaml.safeLoad(pair[1]);
   var alias = {};
   pair[0].split("\\n").forEach(function(line, lineNo){
     if(!line || line.startsWith("#")){
       // do nothing
-    }else if(line.startsWith("$")){
-      exec(line.substring(1));
+    }else if(line.startsWith(">")){
+      exec(line.substring(1).trim());
     }else{
       var parts = line.split("\\s+", 2);
       if(parts.length == 1 && parts[0].endsWith(":")){

@@ -33,6 +33,7 @@
     "esversion": 6
   },
   "dependencies": {
+    "diff": "^2.2.2",
     "js-yaml": "^3.6.0"
   }
 }
