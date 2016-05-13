@@ -1,3 +1,7 @@
+#!/bin/bash
+docker run daft "$@"
+exit
+!#
 # alias is a simple alias of the form
 #alias name docker-image-id
 # aliases will always need to come first in a build.daft
