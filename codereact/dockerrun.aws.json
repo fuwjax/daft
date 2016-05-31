@@ -1,0 +1,18 @@
+{
+  "AWSEBDockerrunVersion": "1",
+  "Image": {
+    "Name": "590934953599.dkr.ecr.us-east-1.amazonaws.com/dockerc",
+    "Update": "true"
+  },
+  "Volumes": [
+    {
+      "HostDirectory": "/var/run/docker.sock",
+      "ContainerDirectory": "/var/run/docker.sock"
+    },
+    {
+      "HostDirectory": "/usr/bin/docker",
+      "ContainerDirectory": "/usr/bin/docker"
+    }
+  ],
+  "Logging": "/var/log/dockerc"
+}

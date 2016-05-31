@@ -7,7 +7,12 @@
     "test": "test"
   },
   "scripts": {
-    "test": "./build.sh"
+    "pretest": "jshint src test",
+    "test": "mocha",
+    "docker": "docker build -t fuwjax/daft ."
+  },
+  "bin":{
+    "daft": "./index.js"
   },
   "repository": {
     "type": "git",
@@ -27,13 +32,13 @@
     "chai": "^3.5.0",
     "jshint": "^2.9.2",
     "mocha": "^2.4.5",
+    "diff": "^2.2.2",
     "sinon": "^1.17.3"
   },
   "jshintConfig": {
     "esversion": 6
   },
   "dependencies": {
-    "diff": "^2.2.2",
     "js-yaml": "^3.6.0"
   }
 }

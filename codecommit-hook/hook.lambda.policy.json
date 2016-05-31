@@ -1,0 +1,8 @@
+{
+    "FunctionName": "hook",
+    "StatementId": "hookV1",
+    "Action": "lambda:InvokeFunction",
+    "Principal": "codecommit.amazonaws.com",
+    "SourceArn": "arn:aws:codecommit:$REGION:$ACCOUNT:*",
+    "SourceAccount": "$ACCOUNT"
+}

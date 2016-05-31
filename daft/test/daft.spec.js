@@ -3,8 +3,8 @@ const assert = require('chai').assert;
 const sinon = require('sinon');
 const process = require('process');
 const console = require('console');
-const dropFile = require('../src/file').dropFile;
-const daft = require('../src/daft');
+const dropFile = require('./file').dropFile;
+const daft = require('..');
 const diff = require('diff');
 const fs = require('fs');
 const util = require('util');
@@ -18,8 +18,8 @@ describe('daft', function() {
     dropFile("target");
     exec("mkdir -p target/repo");
     exec("git init", [], "target/repo");
-    exec("cp -r testasset/README target/repo");
-    exec("cp -r testasset/build.daft target/repo");
+    exec("cp -r testRepo/README target/repo");
+    exec("cp -r testRepo/build.daft target/repo");
   });
   beforeEach(function(){
     // The beforeEach() callback gets run before each test in the suite.
@@ -27,7 +27,7 @@ describe('daft', function() {
   it('duplicates file', function(){
     process.chdir('target/repo');
     daft();
-    var change = diff.diffChars(fs.readFileSync("README", "utf8"), fs.readFileSync("README.bak", "utf8")).filter(function(e){ return e.added || e.removed});
+    var change = diff.diffChars(fs.readFileSync("README", "utf8"), fs.readFileSync("README.bak", "utf8")).filter(function(e){ return e.added || e.removed;});
     assert.deepEqual(change, []);
   });
   after(function() {

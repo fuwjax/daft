@@ -1,7 +1,0 @@
-FROM node:6.1.0
-
-WORKDIR /project
-VOLUME /project
-
-ENTRYPOINT ["npm"]
-CMD ["start"]

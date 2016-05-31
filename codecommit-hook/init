@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# create (or reuse) cluster (referenced in hook.lambda.js)
+# create task hook.aws.json
+# create lambda hook.lambda.js
+
+$(aws ecr get-login --region us-east-1)
+docker build -t 590934953599.dkr.ecr.us-east-1.amazonaws.com/hook .
+docker push 590934953599.dkr.ecr.us-east-1.amazonaws.com/hook
+
+# aws lambda add-permission --cli-input-json file://hook.lambda.policy.json

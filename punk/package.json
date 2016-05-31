@@ -1,0 +1,38 @@
+{
+  "name": "punk",
+  "version": "1.0.0",
+  "description": "Dead simple CI",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fuwjax/daft.git"
+  },
+  "keywords": [
+    "docker",
+    "npm",
+    "CI",
+    "daft"
+  ],
+  "author": "Mike Doberenz <fuwjax@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fuwjax/daft/issues"
+  },
+  "homepage": "https://github.com/fuwjax/daft#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "jshint": "^2.9.2",
+    "mocha": "^2.4.5",
+    "diff": "^2.2.2",
+    "sinon": "^1.17.3"
+  },
+  "jshintConfig": {
+    "esversion": 6
+  },
+  "dependencies": {
+    "js-yaml": "^3.6.0"
+  }
+}
