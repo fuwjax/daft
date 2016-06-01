@@ -1,0 +1,15 @@
+{
+  "requiresAttributes": [
+    {
+      "name": "com.amazonaws.ecs.capability.ecr-auth",
+      "value": null
+    }
+  ],
+  "family": "hook",
+  "containerDefinitions": [
+    {
+      "name": "hook",
+      "image": "590934953599.dkr.ecr.us-east-1.amazonaws.com/hook:latest"
+    }
+  ]
+}
