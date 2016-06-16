@@ -1,5 +1,5 @@
 {
-  "name": "daft",
+  "name": "docker-do",
   "version": "1.0.0",
   "description": "Dead simple Docker scripting",
   "main": "index.js",
@@ -9,25 +9,27 @@
   "scripts": {
     "pretest": "jshint src test",
     "test": "mocha",
-    "docker": "docker build -t fuwjax/daft ."
+    "docker": "docker build -t fuwjax/docker-do ."
   },
   "bin":{
-    "daft": "./index.js"
+    "docker-do": "./index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fuwjax/daft.git"
+    "url": "git+https://github.com/fuwjax/docker-do.git"
   },
   "keywords": [
+    "docker",
     "npm",
-    "docker"
+    "CI",
+    "docker-do"
   ],
   "author": "Mike Doberenz <fuwjax@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/fuwjax/daft/issues"
+    "url": "https://github.com/fuwjax/docker-do/issues"
   },
-  "homepage": "https://github.com/fuwjax/daft#readme",
+  "homepage": "https://github.com/fuwjax/docker-do#readme",
   "devDependencies": {
     "chai": "^3.5.0",
     "jshint": "^2.9.2",

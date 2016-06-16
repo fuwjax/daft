@@ -1,6 +1,8 @@
 #! /usr/bin/env node
 const main = require('./src/main');
 const console = require('console');
+const http = require('http');
+const process = require('process');
 
 var serve = function(port){
   var server = http.createServer((req, resp) => {

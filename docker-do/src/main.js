@@ -10,7 +10,7 @@ var makeOpts = function(paths){
 };
 
 var main = function(){
-  var src = fs.readFileSync('build.daft', 'utf8');
+  var src = fs.readFileSync('build.dodo', 'utf8');
   var pair = src.split("---", 3);
   var opts = pair.length < 2 ? {} : yaml.safeLoad(pair[1]);
   var alias = {};
