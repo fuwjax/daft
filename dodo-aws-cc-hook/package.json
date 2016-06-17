@@ -6,6 +6,9 @@
   "scripts": {
     "test": "mocha"
   },
+  "bin":{
+    "hook": "./server.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fuwjax/docker-do.git"
@@ -33,8 +36,6 @@
     "esversion": 6
   },
   "dependencies": {
-    "aws-sdk": "^2.4.0",
-    "docker-do": "^1.0.0",
-    "js-yaml": "^3.6.1"
+    "aws-sdk": "^2.4.0"
   }
 }

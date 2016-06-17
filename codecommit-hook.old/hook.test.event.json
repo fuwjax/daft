@@ -1,0 +1,27 @@
+{
+  "Records": [
+    {
+      "awsRegion": "us-east-1",
+      "codecommit": {
+        "references":  [
+          {
+            "commit": "6fa484a7438926a892289bb4293bf0ff3e5276c6",
+            "ref": "refs/heads/master"
+          }
+        ]
+      },
+      "customData": "echo Success!",
+      "eventId": "ff588dd9-688d-4e09-8159-8c42121971e2",
+      "eventName": "TriggerEventTest",
+      "eventPartNumber": 1,
+      "eventSource": "aws:codecommit",
+      "eventSourceARN": "arn:aws:codecommit:us-east-1:590934953599:delta",
+      "eventTime": "2016-05-28T22:16:12.067+0000",
+      "eventTotalParts": 1,
+      "eventTriggerConfigId": "ff588dd9-688d-4e09-8159-8c42121971e2",
+      "eventTriggerName": "OnMasterCommit",
+      "eventVersion": "1.0",
+      "userIdentityARN": "arn:aws:iam::590934953599:user/mdoberenz"
+    }
+  ]
+}

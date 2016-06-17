@@ -1,0 +1,23 @@
+{
+  "AWSEBDockerrunVersion": "1",
+  "Image": {
+    "Name": "590934953599.dkr.ecr.us-east-1.amazonaws.com/hook:latest",
+    "Update": "true"
+  },
+  "Ports": [
+    {
+      "ContainerPort": "80"
+    }
+  ],
+  "Volumes": [
+    {
+      "HostDirectory": "/work",
+      "ContainerDirectory": "/work"
+    },
+    {
+      "HostDirectory": "/var/run/docker.sock",
+      "ContainerDirectory": "/var/run/docker.sock"
+    }
+  ],
+  "Logging": "/work/log"
+}

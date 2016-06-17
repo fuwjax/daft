@@ -5,5 +5,4 @@ WORKDIR /work
 VOLUME /work
 
 COPY . /docker-do
-RUN npm install -g --production /docker-do \
-  && npm link --production /docker-do
+RUN npm install -g --production /docker-do
